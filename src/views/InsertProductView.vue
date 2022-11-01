@@ -6,7 +6,7 @@ import MenuView from '../views/header/MenuView.vue'
     <MenuView />
 
     <div class="container">
-        <form action="" method="post">
+        <form id="insertForm" @submit="createProduct">
             <table class="table">
                 <thead>
                     <tr>
@@ -20,10 +20,10 @@ import MenuView from '../views/header/MenuView.vue'
 
                 <tbody>
                     <tr>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="number" class="form-control"></td>
+                        <td><input type="text" v-model="name" name="name" class="form-control"></td>
+                        <td><input type="text" v-model="price" name="price" class="form-control"></td>
+                        <td><input type="text" v-model="description" name="description" class="form-control"></td>
+                        <td><input type="number" v-model="qtd" name="qtd" class="form-control"></td>
                         <td>
                             <select class="form-control">
                                 <option value="">Organico</option>
@@ -38,3 +38,44 @@ import MenuView from '../views/header/MenuView.vue'
         </form>
     </div>
 </template>
+
+<script lang="ts">
+export default {
+    name: "insertForm",
+    data() {
+        return {
+            name: null,
+            description: null,
+            price: null,
+            qtd: null,
+            type: 'Organico'
+        }
+    },
+    methods: {
+        async createProduct(e) {
+
+            e.preventDefault();
+
+            const data = {
+                name: this.name,
+                description: this.description,
+                price: this.price,
+                qtd: this.qtd,
+                type: this.type
+            }
+
+            const dataJson = JSON.stringify(data)
+
+            const req = await fetch("https://localhost:7020/api/Products", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: dataJson
+            })
+
+            const res = await req.json()
+
+            console.log(res)
+        }
+    }
+}
+</script>
