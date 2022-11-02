@@ -39,3 +39,5 @@ npm run dev
 npm run build
 ```
 # Descontrolada
+
+Please change the API URL in MainView on line 69.
