@@ -2,6 +2,7 @@
 using Descontrolada.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList;
 
 namespace Descontrolada.Properties
 {
@@ -17,9 +18,11 @@ namespace Descontrolada.Properties
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetProducts()
+        public async Task<IActionResult> GetProducts(int? page)
         {
-            return Ok(await dbContext.Products.ToListAsync());
+            const int itemsPerPage = 5;
+            int nPage = (page ?? 1);
+            return Ok(await dbContext.Products.ToPagedListAsync(nPage, itemsPerPage));
         }
 
         [HttpPost]

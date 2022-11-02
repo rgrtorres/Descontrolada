@@ -30,3 +30,6 @@ C:\Users\rgrtorres\Desktop\Descontrolada\descontrolada\api\Descontrolada\Descont
 C:\Users\rgrtorres\Desktop\Descontrolada\descontrolada\api\Descontrolada\Descontrolada\obj\Debug\net6.0\Descontrolada.pdb
 C:\Users\rgrtorres\Desktop\Descontrolada\descontrolada\api\Descontrolada\Descontrolada\obj\Debug\net6.0\Descontrolada.genruntimeconfig.cache
 C:\Users\rgrtorres\Desktop\Descontrolada\descontrolada\api\Descontrolada\Descontrolada\obj\Debug\net6.0\ref\Descontrolada.dll
+C:\Users\rgrtorres\Desktop\Descontrolada\descontrolada\api\Descontrolada\Descontrolada\bin\Debug\net6.0\JetBrains.Annotations.dll
+C:\Users\rgrtorres\Desktop\Descontrolada\descontrolada\api\Descontrolada\Descontrolada\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\rgrtorres\Desktop\Descontrolada\descontrolada\api\Descontrolada\Descontrolada\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4f1Rn3NZfTbw/bL/vex0Qk3WPPGOn90tyUpI59N79QnYbBm6I0jI5jvdHXWhVbG8HQlkDKzT1ANSKprZ9gJu4A==",
+  "dgSpecHash": "UM+TCdFkYV8NsIV97R7ltpSHnYCSt3qG9mLZECc7mhNztBy2Ra5S1K4u1vH9TvtJD0jEg0UiHUxcdvUGdR/s2w==",
   "success": true,
   "projectFilePath": "C:\\Users\\rgrtorres\\Desktop\\Descontrolada\\descontrolada\\api\\Descontrolada\\Descontrolada\\Descontrolada.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\rgrtorres\\.nuget\\packages\\jetbrains.annotations\\2022.1.0\\jetbrains.annotations.2022.1.0.nupkg.sha512",
     "C:\\Users\\rgrtorres\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\rgrtorres\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.10\\microsoft.entityframeworkcore.abstractions.6.0.10.nupkg.sha512",
     "C:\\Users\\rgrtorres\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.10\\microsoft.entityframeworkcore.analyzers.6.0.10.nupkg.sha512",
@@ -24,7 +25,9 @@
     "C:\\Users\\rgrtorres\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
     "C:\\Users\\rgrtorres\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\rgrtorres\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "C:\\Users\\rgrtorres\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\rgrtorres\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\rgrtorres\\.nuget\\packages\\x.pagedlist\\8.4.3\\x.pagedlist.8.4.3.nupkg.sha512",
+    "C:\\Users\\rgrtorres\\.nuget\\packages\\x.pagedlist.mvc.core\\8.4.3\\x.pagedlist.mvc.core.8.4.3.nupkg.sha512"
   ],
   "logs": []
 }

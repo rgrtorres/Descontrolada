@@ -20,14 +20,14 @@ import MenuView from '../views/header/MenuView.vue'
 
                 <tbody>
                     <tr>
-                        <td><input type="text" v-model="name" name="name" class="form-control"></td>
-                        <td><input type="text" v-model="price" name="price" class="form-control"></td>
-                        <td><input type="text" v-model="description" name="description" class="form-control"></td>
+                        <td><input type="text" v-model="name" name="name" class="form-control" required></td>
+                        <td><input type="text" v-model="price" name="price" class="form-control" required></td>
+                        <td><input type="text" v-model="description" name="description" class="form-control" required></td>
                         <td><input type="number" v-model="qtd" name="qtd" class="form-control"></td>
                         <td>
-                            <select class="form-control">
-                                <option value="">Organico</option>
-                                <option value="">Inorgânico</option>
+                            <select class="form-control" v-model="type" name="type">
+                                <option value="Orgânico">Orgânico</option>
+                                <option value="Não Orgânico">Inorgânico</option>
                             </select>
                         </td>
                     </tr>
@@ -48,7 +48,7 @@ export default {
             description: null,
             price: null,
             qtd: null,
-            type: 'Organico'
+            type: null
         }
     },
     methods: {
@@ -75,6 +75,7 @@ export default {
             const res = await req.json()
 
             console.log(res)
+            alert('Inserido com sucesso!')
         }
     }
 }
