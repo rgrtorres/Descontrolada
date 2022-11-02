@@ -7,6 +7,13 @@ import MenuView from '../views/header/MenuView.vue'
 
     <div class="container">
         <form id="insertForm" @submit="createProduct">
+            <p v-if="errors.length">
+                <b>Verifique todos os campos por favor!</b>
+            <ul>
+                <li v-for="error in errors">{{ error }}</li>
+            </ul>
+            </p>
+
             <table class="table">
                 <thead>
                     <tr>
@@ -20,10 +27,11 @@ import MenuView from '../views/header/MenuView.vue'
 
                 <tbody>
                     <tr>
-                        <td><input type="text" v-model="name" name="name" class="form-control" required></td>
-                        <td><input type="text" v-model="price" name="price" class="form-control" required></td>
-                        <td><input type="text" v-model="description" name="description" class="form-control" required></td>
-                        <td><input type="number" v-model="qtd" name="qtd" class="form-control"></td>
+                        <td><input type="text" v-model="name" name="name" class="form-control"></td>
+                        <td><input type="text" v-model="price" name="price" class="form-control"></td>
+                        <td><input type="text" v-model="description" name="description" class="form-control">
+                        </td>
+                        <td><input type="number" v-model="qtd" name="qtd" class="form-control" min="1"></td>
                         <td>
                             <select class="form-control" v-model="type" name="type">
                                 <option value="Orgânico">Orgânico</option>
@@ -48,34 +56,60 @@ export default {
             description: null,
             price: null,
             qtd: null,
-            type: null
+            type: null,
+            errors: []
         }
     },
     methods: {
         async createProduct(e) {
 
             e.preventDefault();
+            this.errors = [];
 
-            const data = {
-                name: this.name,
-                description: this.description,
-                price: this.price,
-                qtd: this.qtd,
-                type: this.type
+            if (!this.name) {
+                this.errors.push("O nome é obrigatório.");
+            }
+            
+            if (!this.description) {
+                this.errors.push("A descrição é obrigatória!");
+            }
+            
+            if (!this.price) {
+                this.errors.push("O preço é obrigatório!");
             }
 
-            const dataJson = JSON.stringify(data)
+            if (this.qtd <= 0) {
+                this.errors.push("A quantidade precisa ser maior que 0.");
+            }
 
-            const req = await fetch("https://localhost:7020/api/Products", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: dataJson
-            })
+            if (this.type <= 0) {
+                this.errors.push("O tipo é obrigatório!");
+            }
+            
+            else {
+                const data = {
+                    name: this.name,
+                    description: this.description,
+                    price: this.price,
+                    qtd: this.qtd,
+                    type: this.type
+                }
 
-            const res = await req.json()
+                const dataJson = JSON.stringify(data)
 
-            console.log(res)
-            alert('Inserido com sucesso!')
+                const req = await fetch("https://localhost:7020/api/Products", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: dataJson
+                })
+
+                const res = await req.json()
+
+                console.log(res)
+                alert('Inserido com sucesso!')
+
+                this.$router.push({path: '/'})
+            }
         }
     }
 }

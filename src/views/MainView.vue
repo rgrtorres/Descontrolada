@@ -17,7 +17,7 @@ import MenuView from '../views/header/MenuView.vue'
                 </thead>
 
                 <tbody>
-                    <tr v-for="(product, index) in products" v-bind:key="product.id">
+                    <tr v-for="product in products" v-bind:key="product.id">
                         <td>{{ product.name }}</td>
                         <td>{{ product.type }}</td>
                         <!-- <td>
